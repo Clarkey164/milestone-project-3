@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 
 class Table(models.Model):
     number = models.IntegerField(unique=True)
-    capacity = models.IntegerField()
+    capacity = models.PositiveIntegerField()
 
     def __str__(self):
         return f"Table {self.number} ({self.capacity} seats)"
@@ -22,7 +22,7 @@ class Reservation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('table', 'date', 'time')
+        unique_together = ("table", "date", "time")  # Prevents double-bookings
 
     def clean(self):
         if self.guests > self.table.capacity:

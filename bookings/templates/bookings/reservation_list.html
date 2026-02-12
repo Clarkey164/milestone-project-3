@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<h2>All Reservations</h2>
+
+<a href="{% url 'book_table' %}">Book New Table</a>
+
+<ul>
+  {% for reservation in reservations %}
+    <li>
+      {{ reservation.name }} - {{ reservation.date }} {{ reservation.time }}
+      <a href="{% url 'reservation_detail' reservation.pk %}">View</a>
+      <a href="{% url 'reservation_update' reservation.pk %}">Edit</a>
+      <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
+    </li>
+  {% empty %}
+    <li>No reservations yet.</li>
+  {% endfor %}
+</ul>
