@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<h2>All Reservations</h2>
-
+<h2>My Reservations</h2>
 <a href="{% url 'book_table' %}">Book New Table</a>
 
 <ul>
@@ -9,10 +8,15 @@
     <li>
       {{ reservation.name }} - {{ reservation.date }} {{ reservation.time }}
       <a href="{% url 'reservation_detail' reservation.pk %}">View</a>
-      <a href="{% url 'reservation_update' reservation.pk %}">Edit</a>
-      <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
+
+      {% if reservation.user == user or user.is_staff %}
+        <a href="{% url 'reservation_update' reservation.pk %}">Edit</a>
+        <a href="{% url 'reservation_delete' reservation.pk %}">Delete</a>
+      {% endif %}
     </li>
   {% empty %}
     <li>No reservations yet.</li>
   {% endfor %}
 </ul>
+
+<a href="{% url 'logout' %}">Logout</a>
