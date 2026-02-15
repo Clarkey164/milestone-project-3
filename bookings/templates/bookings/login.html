@@ -1,4 +1,10 @@
+{% extends 'bookings/base.html' %}
+
+{% load static %}
+
 <!DOCTYPE html>
+
+{% block content%}
 
 <h2>Login</h2>
 <form method="post">
@@ -7,3 +13,5 @@
   <button type="submit">Login</button>
 </form>
 <a href="{% url 'register' %}">Register</a>
+
+{% endblock %}

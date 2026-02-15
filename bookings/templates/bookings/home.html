@@ -1,9 +1,15 @@
+{% extends 'bookings/base.html' %}
+
+{% load static %}
+
 <!DOCTYPE html>
 
-
 <html>
+    
+
 <head>
     <title>Welcome to Our Restaurant</title>
+    <link rel="stylesheet" href="{% static 'bookings/css/style.css' %}">
 </head>
 <body>
     <h1>Welcome to Our Restaurant Booking System!</h1>
@@ -12,4 +18,5 @@
     <a href="{% url 'register' %}">Register</a> |
     <a href="{% url 'login' %}">Login</a>
 </body>
+
 </html>

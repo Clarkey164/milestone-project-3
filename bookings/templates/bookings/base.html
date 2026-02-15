@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Restaurant Booking{% endblock %}</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'bookings/css/style.css' %}">
+</head>
+
+<body>
+    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo">
+                <a href="{% url 'home' %}">🍽 Restaurant</a>
+            </div>
+
+            <div class="nav-links">
+                {% if user.is_authenticated %}
+
+                    <span class="welcome">
+                        Welcome, {{ user.username }}
+
+                        <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                        </form>
+                    </span>
+
+                    <a href="{% url 'reservation_list' %}">My Reservations</a>
+                    <a href="{% url 'book_table' %}">Book Table</a>
+
+                {% else %}
+
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+
+                {% endif %}
+            </div>
+
+        </div>
+    </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© {% now "Y" %} Restaurant Booking System</p>
+    </footer>
+
+</body>
+</html>

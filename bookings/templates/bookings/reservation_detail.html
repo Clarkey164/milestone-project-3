@@ -1,5 +1,10 @@
+{% extends 'bookings/base.html' %}
+
+{% load static %}
+
 <!DOCTYPE html>
 
+{% block content %}
 <h2>Reservation Details</h2>
 
 <p>Name: {{ reservation.name }}</p>
@@ -11,3 +16,5 @@
 
 <a href="{% url 'reservation_update' reservation.pk %}">Edit</a>
 <a href="{% url 'reservation_list' %}">Back</a>
+
+{% endblock %}

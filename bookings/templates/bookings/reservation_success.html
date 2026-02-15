@@ -1,6 +1,10 @@
+{% extends 'bookings/base.html' %}
+
+{% load static %}
+
 <!DOCTYPE html>
 
-
+{% block content %}
 <html>
 <head>
     <title>Reservation Successful</title>
@@ -12,3 +16,4 @@
     <a href="{% url 'reservation_list' %}">My reservations</a>
 </body>
 </html>
+{% endblock %}
