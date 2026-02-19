@@ -9,6 +9,82 @@ body {
     padding: 0;
 }
 
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.btn-primary {
+    padding: 12px 28px;
+    border-radius: 6px;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a0000;
+}
+
+/* Story section */
+.story {
+    padding: 20px;
+}
+
+.card {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border: 1px solid #e5dccf;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.card h2 {
+    font-family: Georgia, serif;
+    color: var(--brown);
+}
+
 main {
     flex: 1;
     width: 90%;
@@ -18,16 +94,29 @@ main {
     text-align: center;
 }
 
-form {
+.main {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     padding: 30px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     align-items: center;
+}
+
+.welcome {
+    margin-top: 10px;
+}
+
+.logout {
+    background-color: #8B0000;
+    color: #fff; 
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .helptext {
@@ -73,4 +162,64 @@ button {
 
 button:hover {
     background-color: #28282B;
+}
+
+#social-icons i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Responsive Design for tablets */
+@media (max-width: 768px) {
+
+    header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    main {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+}
+
+/* Responsive Design for mobile */
+@media (max-width: 360px) {
+
+    header {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    main {
+        width: 75%;
+        padding: 5px;
+    }
+
+    .main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+
 }

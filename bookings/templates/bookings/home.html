@@ -4,19 +4,51 @@
 
 <!DOCTYPE html>
 
+{% block content%}
+
 <html>
     
+<main class="hero">
 
-<head>
-    <title>Welcome to Our Restaurant</title>
-    <link rel="stylesheet" href="{% static 'bookings/css/style.css' %}">
-</head>
-<body>
-    <h1>Welcome to Our Restaurant Booking System!</h1>
-    <p>To book a table, please register or login.</p>
+    <div class="hero-content">
+        <h1 id="name">Welcome to The Prime Cut</h1>
+        <h2>Where Perfect Steak Meets Unforgettable Atmosphere</h2>
 
-    <a href="{% url 'register' %}">Register</a> |
-    <a href="{% url 'login' %}">Login</a>
-</body>
+        <p class="tagline">
+            Hand-cut premium steaks, expertly grilled over open flame,
+            served with bold flavours and warm hospitality.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'register' %}" class="btn-primary">Register</a>
+        </div>
+    </div>
+
+</main>
+
+
+<section class="story">
+
+    <div class="card">
+        <h2>Crafted for Steak Lovers</h2>
+
+        <p>
+            At The Prime Cut, steak isn't just a meal — it's an experience.
+            From carefully sourced cuts to our signature seasoning and precise
+            grilling techniques, every plate is designed to deliver rich flavour
+            and tenderness in every bite.
+        </p>
+
+        <p>
+            Whether you're celebrating a special occasion, enjoying a night out,
+            or simply craving the perfect steak, our team is here to make every
+            visit memorable.
+        </p>
+    </div>
+
+</section>
+
 
 </html>
+
+{% endblock %}

@@ -3,10 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Restaurant Booking{% endblock %}</title>
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="{% static 'bookings/css/style.css' %}">
+    <!--Java Scrpit Icons-->
+    <script src="https://kit.fontawesome.com/a20712ca3e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,7 +19,7 @@
         <div class="nav-container">
 
             <div class="logo">
-                <a href="{% url 'home' %}">🍽 Restaurant</a>
+                <a href="{% url 'home' %}">🍽 The Prime Cut 🍽</a>
             </div>
 
             <div class="nav-links">
@@ -25,7 +28,7 @@
                     <span class="welcome">
                         Welcome, {{ user.username }}
 
-                        <form method="post" action="{% url 'logout' %}">
+                        <form class="logout" method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <button type="submit">Logout</button>
                         </form>
@@ -55,6 +58,11 @@
     <!-- Footer -->
     <footer class="footer">
         <p>© {% now "Y" %} Restaurant Booking System</p>
+        <div id="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
     </footer>
 
 </body>

@@ -7,11 +7,15 @@
 {% block content%}
 
 <h2>Login</h2>
-<form method="post">
+
+<form class="main" method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>
 </form>
-<a href="{% url 'register' %}">Register</a>
+
+<div style="margin-top: 80px;">
+  <a href="{% url 'register' %}">Register</a>
+</div>
 
 {% endblock %}
